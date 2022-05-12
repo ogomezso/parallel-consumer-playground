@@ -1,2 +1,5 @@
 /parallel-consumer-playground.iml
 /.idea/
+.history/
+.vscode/
+/target/
