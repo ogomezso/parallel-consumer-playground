@@ -8,15 +8,16 @@ import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static io.confluent.parallelconsumer.ParallelConsumerOptions.ProcessingOrder.KEY;
 
 @Slf4j
 public class BasicParallelConsumerByKey {
 
-    ParallelStreamProcessor<String, String> parallelConsumer;
+    private ParallelStreamProcessor<String, String> parallelConsumer;
+    public AtomicInteger consumerCount = new AtomicInteger();
 
     @SuppressWarnings("UnqualifiedFieldAccess")
     void run(Consumer<String, String> kafkaConsumer, Producer<String, String> kafkaProducer, List<String> inputTopics) {
@@ -53,6 +54,16 @@ public class BasicParallelConsumerByKey {
         }, consumeProduceResult -> log.debug("Message {} saved to broker at offset {}",
                 consumeProduceResult.getOut(),
                 consumeProduceResult.getMeta().offset()));
+    }
+
+    void poll(Consumer<String, String> kafkaConsumer, Producer<String, String> kafkaProducer,
+    List<String> inputTopics){
+        this.parallelConsumer = setupParallelConsumer(kafkaConsumer, kafkaProducer, inputTopics);
+        parallelConsumer.poll(record -> {
+            log.info("PC record Consumed: {}", record);
+            consumerCount.incrementAndGet();
+        });
+
     }
 
     private Result processBrokerRecord(ConsumerRecord<String, String> record) {
