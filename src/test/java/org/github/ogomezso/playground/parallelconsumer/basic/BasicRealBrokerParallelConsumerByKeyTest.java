@@ -13,11 +13,11 @@ import org.github.ogomezso.playground.parallelconsumer.TopicsMotherObject;
 import org.github.ogomezso.playground.utils.KafkaClientsBuilder;
 import org.junit.Test;
 
-import es.santander.kafka.test.clients.KafkaTestAdminClient;
-import es.santander.kafka.test.clients.KafkaTestProducer;
-import es.santander.kafka.test.config.KafkaTestConfig;
-import es.santander.kafka.test.objects.TestRecord;
-import es.santander.kafka.test.objects.TestTopicConfig;
+import es.santander.libcom.kafka.test.clients.KafkaTestAdminClient;
+import es.santander.libcom.kafka.test.clients.KafkaTestProducer;
+import es.santander.libcom.kafka.test.config.KafkaTestConfig;
+import es.santander.libcom.kafka.test.objects.TestRecord;
+import es.santander.libcom.kafka.test.objects.TestTopicConfig;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

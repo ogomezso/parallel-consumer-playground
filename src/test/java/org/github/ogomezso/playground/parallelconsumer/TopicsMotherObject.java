@@ -3,7 +3,8 @@ package org.github.ogomezso.playground.parallelconsumer;
 import java.util.Arrays;
 import java.util.List;
 
-import es.santander.kafka.test.objects.TestTopicConfig;
+import es.santander.libcom.kafka.test.objects.TestTopicConfig;
+
 
 public class TopicsMotherObject {
 

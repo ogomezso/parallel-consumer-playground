@@ -15,12 +15,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import es.santander.kafka.test.clients.KafkaTestAdminClient;
-import es.santander.kafka.test.clients.KafkaTestConsumer;
-import es.santander.kafka.test.clients.KafkaTestProducer;
-import es.santander.kafka.test.config.KafkaTestConfig;
-import es.santander.kafka.test.objects.TestTopicConfig;
-import es.santander.kafka.test.server.EmbeddedSingleNodeCluster;
+import es.santander.libcom.kafka.test.clients.KafkaTestAdminClient;
+import es.santander.libcom.kafka.test.clients.KafkaTestConsumer;
+import es.santander.libcom.kafka.test.clients.KafkaTestProducer;
+import es.santander.libcom.kafka.test.config.KafkaTestConfig;
+import es.santander.libcom.kafka.test.objects.TestTopicConfig;
+import es.santander.libcom.kafka.test.server.EmbeddedSingleNodeCluster;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

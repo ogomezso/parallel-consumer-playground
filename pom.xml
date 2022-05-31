@@ -10,14 +10,14 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <kafka.version>3.0.1</kafka.version>
+        <kafka.version>3.1.0</kafka.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.confluent.parallelconsumer</groupId>
             <artifactId>parallel-consumer-core</artifactId>
-            <version>0.5.0.0</version>
+            <version>0.5.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -28,10 +28,16 @@
         <dependency>
             <groupId>io.confluent.parallelconsumer</groupId>
             <artifactId>parallel-consumer-core</artifactId>
-            <version>0.4.0.1</version>
+            <version>0.5.1.0</version>
             <classifier>tests</classifier>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -43,15 +49,21 @@
             <version>1.7.36</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams-test-utils</artifactId>
+            <version>3.1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>es.santander</groupId>
-            <artifactId>kafka-test-utils</artifactId>
-            <version>0.0.1_7.0.1</version>
+            <groupId>es.santander.libcom</groupId>
+            <artifactId>confluent-core-kafka-test-utils</artifactId>
+            <version>0.0.2_7.0.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
